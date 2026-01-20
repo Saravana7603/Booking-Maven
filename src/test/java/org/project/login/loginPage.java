@@ -23,8 +23,8 @@ public class loginPage extends BaseClass  {
 	private  WebElement cal;
 	
 	@FindAll({
-	    @FindBy(xpath = "//span[@aria-label='Th 15 January 2026']"),
-	    @FindBy(xpath = "//span[@data-date='2026-01-15']")
+	    @FindBy(xpath = "//span[@aria-label='Th 22 January 2026']"),
+	    @FindBy(xpath = "//span[@data-date='2026-01-22']")
 	})
 	private WebElement date;
 	
