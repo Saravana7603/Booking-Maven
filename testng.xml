@@ -4,7 +4,7 @@
   <test thread-count="5" name="Test">
   <parameter name="userName" value="Singapore"></parameter>
     <classes>
-      <class name="org.project.TestNG.testNg"/>
+      <class name="org.project.TestNG.TestNg"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

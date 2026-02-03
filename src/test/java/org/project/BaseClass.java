@@ -24,6 +24,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.project.login.loginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -75,7 +76,7 @@ public class BaseClass{
     	  TakesScreenshot tk;
           tk=(TakesScreenshot)driver;
           File src = (File) tk.getScreenshotAs(OutputType.FILE);
-          File dest=new  File("C:\\Users\\Saravana\\.echlips\\New folder\\NewMaven\\src\\test\\resources\\Screenshot//1.png");
+          File dest=new  File("C:\\Users\\saravanakumar\\Desktop\\New folder\\Booking-Maven\\src\\test\\resources\\screenshort//1.png");
           FileUtils.copyFile(src,dest);
       }
       public static String excalRead(String filepath,String Sheetname,int row,int Cell) throws IOException {
@@ -96,62 +97,57 @@ public class BaseClass{
      }
      public void Serach1() {
     	 WebElement search=driver.findElement(By.name("ss"));
-    	 send(search,"Puducherry");
+    	 send(search,"Singapore");
      }
      public void Date1() throws InterruptedException {
     	 WebElement d = driver.findElement(By.xpath("//button[@data-testid='searchbox-dates-container']"));
     	 d.click();
-    	 Thread.sleep(3000);
-    	 WebElement A = driver.findElement(By.xpath("//span[@aria-label='Th 22 January 2026']"));
+    	 Thread.sleep(1000);
+    	 WebElement A = driver.findElement(By.xpath("//span[@aria-label='Sa 14 February 2026']"));
     	 A.click();
      }public void Alt() throws InterruptedException {
-    	 WebElement adu = driver.findElement(By.xpath("//span[@class='be2db1c937']"));
+    	 WebElement adu = driver.findElement(By.xpath("//button[@data-testid='occupancy-config']"));
     	 adu.click();
-    	 Thread.sleep(3000);
-    	 r.keyPress(KeyEvent.VK_TAB);
-    	 r.keyPress(KeyEvent.VK_TAB);
-         r.keyRelease(KeyEvent.VK_TAB);
-         r.keyPress(KeyEvent.VK_END);
-         r.keyRelease(KeyEvent.VK_END);
-         Thread.sleep(3000);
-         WebElement Child = driver.findElement(By.id(":rh:"));
-         Child.click();
-         Thread.sleep(3000);
-         WebElement Age = driver.findElement(By.xpath("//option[@value='16']"));
-         Age.click();
-         Thread.sleep(3000);
+
          WebElement done = driver.findElement(By.xpath("//span[text()='Done']"));
          done.click();
-         Thread.sleep(3000);
+         
          WebElement srh = driver.findElement(By.xpath("//span[text()='Search']"));
          srh.click();
-         Thread.sleep(3000);
+        
      }
      public void Hotel() throws InterruptedException, IOException {
-         WebElement hotel = driver.findElement(By.xpath("//div[contains(text()='Grand H')]"));
+    	 Thread.sleep(3000);
+         WebElement hotel = driver.findElement(By.xpath("//div[contains(text(),'QT Sin')]"));
          hotel.click();
-         Thread.sleep(3000);
-         A.contextClick().perform();
-         r.keyPress(KeyEvent.VK_DOWN);
-         r.keyRelease(KeyEvent.VK_DOWN);
-         Thread.sleep(3000);
-         r.keyPress(KeyEvent.VK_ENTER);
-         r.keyRelease(KeyEvent.VK_ENTER);
-         Thread.sleep(2000);
          Set<String>wh = driver.getWindowHandles();
          List<String> Li = new LinkedList<>();
          Li.addAll(wh);
-         driver.switchTo().window(Li.get(2));
-         Thread.sleep(3000);
+         driver.switchTo().window(Li.get(1));
+         TakesScreenshot tk;
+         tk=(TakesScreenshot)driver;
+         File src = (File) tk.getScreenshotAs(OutputType.FILE);
+         File dest=new  File("C:\\Users\\saravanakumar\\Desktop\\New folder\\Booking-Maven\\src\\test\\resources\\screenshort\\1.png");
+         FileUtils.copyFile(src,dest);
          
-         screenshort();
+        
      }
-     public void map() throws InterruptedException {
-         WebElement name = driver.findElement(By.xpath("//div[@data-testid='map-entry-point-marker']"));
+     public void city() throws InterruptedException {
+         WebElement name = driver.findElement(By.xpath("//a[@aria-label='Singapore']"));
          name.click();
-         Thread.sleep(3000);
-         WebElement view = driver.findElement(By.xpath("//span[text()='View']"));
-         view.click();
+         WebElement brakfast = driver.findElement(By.xpath("(//div[contains(text(),'Break')])[2]"));
+         brakfast.click();
+         WebElement hot = driver.findElement(By.xpath("(//div[contains(text(),'Very')])[2]"));
+         hot.click();
+         WebElement pluse = driver.findElement(By.xpath("(//div[contains(text(),'Fi')])[2]"));
+         pluse.click();
+         WebElement pluse2 = driver.findElement(By.xpath("(//div[contains(text(),'Dou')])"));
+         pluse2.click();
+         WebElement ok = driver.findElement(By.xpath("(//div[contains(text(),'5 st')])[2]"));
+         ok.click();
+         WebElement reat = driver.findElement(By.xpath("(//div[contains(text(),'Marina')])[1]"));
+         reat.click();
+     
          Thread.sleep(3000);
      }
      public void Booking() throws InterruptedException {

@@ -1,4 +1,4 @@
-package org.Junit;
+		package org.Junit;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -19,8 +19,9 @@ public class Junit1 extends BaseClass {
 		
 	}
 	@AfterClass
-	public static void AfterClass() {
-		//Quit();
+	public static void AfterClass() throws InterruptedException {
+	Thread.sleep(3000);
+//     Quit();
 		System.out.println("AfterClass");
 	}
 	@Before
@@ -33,28 +34,26 @@ public class Junit1 extends BaseClass {
 		System.out.println("After");
 	}
 	@Test
-	public void a() throws InterruptedException, AWTException {
+	public void a() throws InterruptedException, AWTException, IOException {
 		impwait(15);
-		Thread.sleep(3000);
 		Thread.sleep(3000);
 		enter();
 		Serach1();
-		Thread.sleep(3000);
 		 Date1();
-		 Thread.sleep(3000);
 		 Alt();
-		 Thread.sleep(3000);
+		
 		System.out.println("Test");
 	}
 	@Test
 	public void b() throws InterruptedException, IOException {
-		Hotel();
-		Thread.sleep(1000);
-		map();
-		Thread.sleep(1000);
-		Booking();
-		Thread.sleep(1000);
+		
+		city();
 		System.out.println("Test");
+	}
+	@Test
+	public void c() throws InterruptedException, IOException {
+		Hotel();
+		
 	}
 
 }
